@@ -43,7 +43,7 @@ class SearchCountJob(BaseETLJob):
                              
                            
 
-            return util.strip_invalid_chars(sep.join(key_fields))
+            return sep.join(map(util.strip_invalid_chars, key_fields))
 
         rec = self.get_fhr_report(line)
         if not rec:
